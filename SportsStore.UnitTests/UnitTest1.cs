@@ -34,7 +34,7 @@ namespace SportsStore.UnitTests
             controller.PageSize = 3;
 
             // działanie
-            ProductsListViewModel result = (ProductsListViewModel)controller.List(2).Model;
+            ProductsListViewModel result = (ProductsListViewModel)controller.List(null,2).Model;
 
             // assercje
             Product[] prodArray = result.Products.ToArray();
