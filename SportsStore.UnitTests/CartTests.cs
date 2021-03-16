@@ -126,7 +126,7 @@ namespace SportsStore.UnitTests
 
             Cart cart = new Cart();
 
-            CartController target = new CartController(mock.Object);
+            CartController target = new CartController(mock.Object, null);
 
             // działanie
             target.AddToCart(cart, 1, null);
@@ -150,7 +150,7 @@ namespace SportsStore.UnitTests
             Cart cart = new Cart();
 
             // przygotowanie - utworzenie kontrolera
-            CartController target = new CartController(mock.Object);
+            CartController target = new CartController(mock.Object, null);
 
             // działanie
             RedirectToRouteResult result = target.AddToCart(cart, 2, "myUrl");
@@ -165,7 +165,7 @@ namespace SportsStore.UnitTests
         {
             // przygotowanie
             Cart cart = new Cart();
-            CartController target = new CartController(null);
+            CartController target = new CartController(null, null);
 
             // działanie
             CartIndexViewModel result = (CartIndexViewModel)target.Index(cart, "myUrl").ViewData.Model;
@@ -174,5 +174,7 @@ namespace SportsStore.UnitTests
             Assert.AreSame(result.Cart, cart);
             Assert.AreEqual(result.ReturnUrl, "myUrl");
         }
+
+
     }
 }
