@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SportsStore.Domain.Entities
 {
-    class ShippingDetails
+    public class ShippingDetails
     {
         [Required(ErrorMessage = "Proszę podać nazwisko.")]
         public string Name { get; set; }
@@ -16,6 +16,9 @@ namespace SportsStore.Domain.Entities
         public string Line1 { get; set; }
         public string Line2 { get; set; }
         public string Line3 { get; set; }
+
+        [Required(ErrorMessage ="Proszę podać nazwę miasta.")]
+        public string City { get; set; }
 
         [Required(ErrorMessage ="Proszę podać nazwę województwa.")]
         public string State { get; set; }
